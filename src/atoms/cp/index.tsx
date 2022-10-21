@@ -1,23 +1,23 @@
-import React, { useState } from 'react'
-import { getAdresses } from '../../helpers/apis/cp/cp';
+import React from "react";
+import useCp from "../../customHooks/useCp";
+import { PropsComponentCp } from "./types";
 
-export const Cp = () => {
+// export const Cp = ({ onChange = () => {} }: PropsComponentCp) => {
 
-    const [cp,setValue] = useState("");
+// };
 
-    const handleOnChange = async(cp:string) => {
-
-        const cpValidated = cp.substring(0,5);
-
-        setValue(cpValidated);
-
-        if(cp.length<5) return 
-
-        const listAdresses = await getAdresses(cpValidated);
-        console.log(listAdresses);
-    }
+function Cp({ onChange }: PropsComponentCp): JSX.Element {
+  const { cp, handleOnChange } = useCp({ onChange });
 
   return (
-    <input type="number" value={cp} min={5} max={5} onChange={e=>handleOnChange(e.target.value)}/>
-  )
+    <input
+      type="number"
+      value={cp}
+      min={5}
+      max={5}
+      onChange={(e) => handleOnChange(e.target.value)}
+    />
+  );
 }
+
+export { Cp };
