@@ -10,13 +10,15 @@ function Cp({ onChange }: PropsComponentCp): JSX.Element {
   const { cp, handleOnChange } = useCp({ onChange });
 
   return (
+    <label>Codigo Postal: 
     <input
       type="number"
       value={cp}
-      min={5}
-      max={5}
+      minLength={5}
+      maxLength={5}
       onChange={(e) => handleOnChange(e.target.value)}
     />
+    </label>
   );
 }
 
