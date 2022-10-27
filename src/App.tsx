@@ -7,7 +7,7 @@ import { Listadresses } from "./molecules/listadresses/listadresses";
 import { parseAddresses } from "./helpers/cp";
 
 // RETOS
-// [] - 1. Al borrar el CP des-aparecer los resultados
+// [x] - 1. Al borrar el CP des-aparecer los resultados
 // [] - 2. Estilos a la lista
 // [] - 3. Seleccionar una direccion una recuperarlo con un callback
 

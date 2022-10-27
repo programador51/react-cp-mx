@@ -1,20 +1,18 @@
 import React from "react";
 import { AddressI } from "../../molecules/listadresses/types";
 import { savepositionaddress } from "./saveaddress";
+import css from "./index.module.scss";
 
-
-function Address({ item, index }: { item: AddressI, index: any }) { // index provisional para saber la posición de cada valor
+function Address({ item, index }: { item: AddressI; index: any }) {
+  // index provisional para saber la posición de cada valor
   return (
     <>
- <label className="dataaddress" htmlFor={index}>
+      <label htmlFor={index} className={css.adress}>
         {item.tipoDeZona} {item.colonia} {item.estado} {item.municipio} {index}
       </label>
-      <input type="radio" name="infoaddress" id={index} value={index} onClick={} /><br/>
-
-
+      <input type="radio" name="infoaddress" id={index} value={index} />
     </>
 
-  
     /*
             <tr>
       <th>Tipo de Zona</th> 

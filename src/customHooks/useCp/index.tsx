@@ -10,7 +10,10 @@ function useCp({ onChange = () => {} }: ValuesCustomHookUseCp) {
 
     setValue(cpValidated);
 
-    if (cp.length < 5) return;
+    if (cp.length < 5) {
+      onChange([]);
+      return;
+    }
 
     const listAdresses = await getAdresses(cpValidated);
     onChange(listAdresses);
