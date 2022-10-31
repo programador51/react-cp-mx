@@ -12,3 +12,12 @@
     background-color: #c1c1c1;
   }
 }
+
+.containerAdress{
+  input{
+    display: none;
+  }
+  input:checked + label{
+    border:2px solid #343a40;
+  }
+}

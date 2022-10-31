@@ -8,7 +8,7 @@ import { parseAddresses } from "./helpers/cp";
 
 // RETOS
 // [x] - 1. Al borrar el CP des-aparecer los resultados
-// [] - 2. Estilos a la lista
+// [x] - 2. Estilos a la lista
 // [] - 3. Seleccionar una direccion una recuperarlo con un callback
 
 // [x] - 1. Obtener el CP en un scope mas arriba

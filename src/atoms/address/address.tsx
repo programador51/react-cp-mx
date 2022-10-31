@@ -3,15 +3,16 @@ import { AddressI } from "../../molecules/listadresses/types";
 import { savepositionaddress } from "./saveaddress";
 import css from "./index.module.scss";
 
-function Address({ item, index }: { item: AddressI; index: any }) {
+function Address({ item, index  }: { item: AddressI; index: any }) {
   // index provisional para saber la posición de cada valor
   return (
-    <>
+    <div className={css.containerAdress}>
+    <input onChange={e=>{}} type="radio" name="infoaddress" id={index} value={index} />
       <label htmlFor={index} className={css.adress}>
         {item.tipoDeZona} {item.colonia} {item.estado} {item.municipio} {index}
       </label>
-      <input type="radio" name="infoaddress" id={index} value={index} />
-    </>
+      
+    </div>
 
     /*
             <tr>
