@@ -1,0 +1,46 @@
+// #f7f7f9 FONDO INPUT
+// #4bbf73 COLOR EXITO
+// #d9534f COLOR ERROR
+// #55595c TEXTO COLOR LABEL
+@font-face {
+    font-family: "NunitoSans";
+    src: url("../../tipografias/NunitoSans-Regular.ttf") format("truetype");
+}  
+
+.container , .exito ,.fracaso{
+    font-family: NunitoSans;
+    font-size: 16px;
+}
+
+.container {
+    display:flex;
+    flex-direction:column;
+    align-items: flex-start;
+    width:100%;
+
+    input{
+        border-radius: 0;
+        border: none;
+        background-color: #f7f7f9;
+        padding: 10px 2.5% 10px 2.5%;
+        width: 95%;
+        &:focus , :active{
+         border: 3px solid #c6c6c6;
+         border-style: none none solid none;
+         outline:none;
+         -moz-appearance: textfield;
+        }
+        &::-webkit-inner-spin-button, ::-webkit-outer-spin-button{
+            -webkit-appearance: none;
+        }
+    }
+}
+
+.exito {
+    color: #4bbf73;
+
+}
+
+.fracaso{
+    color: #d9534f;
+}

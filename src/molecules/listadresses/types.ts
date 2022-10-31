@@ -7,4 +7,5 @@ export interface AddressI {
 
 export interface PropsListadresses {
   addresses?: AddressI[];
+  onChange?:(adress:AddressI)=>void;
 }

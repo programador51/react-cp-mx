@@ -4,5 +4,7 @@ export interface PropsComponentCp {
   /**
    * Funcion que devuelve algo...
    */
-  onChange?: (listOfAddresses: Cp[]) => void;
+  onChange?: (listOfAddresses: Cp[],cp:string) => void;
+
+  props?:React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 }

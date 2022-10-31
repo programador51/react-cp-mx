@@ -1,15 +1,19 @@
-import React from "react";
+import React , { useState } from "react";
 import { AddressI } from "../../molecules/listadresses/types";
 import { savepositionaddress } from "./saveaddress";
 import css from "./index.module.scss";
+import { PropsAdressListItem } from "./types";
+import {v4 as uuidv4} from "uuid";
 
-function Address({ item, index  }: { item: AddressI; index: any }) {
+function Address({ item, index, onChange  }: PropsAdressListItem):any {
+
+  const [htmlDom,setHtmlDom] = useState(uuidv4());
   // index provisional para saber la posición de cada valor
   return (
     <div className={css.containerAdress}>
-    <input onChange={e=>{}} type="radio" name="infoaddress" id={index} value={index} />
-      <label htmlFor={index} className={css.adress}>
-        {item.tipoDeZona} {item.colonia} {item.estado} {item.municipio} {index}
+    <input onChange={e=>onChange(item)} type="radio" name="infoaddress" id={htmlDom}/>
+      <label htmlFor={htmlDom} className={css.adress}>
+        {item.tipoDeZona} {item.colonia} {item.estado} {item.municipio}
       </label>
       
     </div>

@@ -6,20 +6,24 @@ import { PropsComponentCp } from "./types";
 
 // };
 
-function Cp({ onChange }: PropsComponentCp): JSX.Element {
+function Cp({ onChange , props = {} }: PropsComponentCp): JSX.Element {
   const { cp, handleOnChange } = useCp({ onChange });
 
   return (
-    <label>Codigo Postal: 
+    <>
+    <label>Codigo Postal 
+      </label>
     <input
+      {...props}
       type="number"
       value={cp}
       minLength={5}
       maxLength={5}
       onChange={(e) => handleOnChange(e.target.value)}
     />
-    </label>
-  );
+    </>
+    
+  );  
 }
 
 export { Cp };

@@ -5,6 +5,8 @@ import { Cp } from "./atoms/cp";
 import { Cp as CpTyping } from "./helpers/apis/cp/interfaces";
 import { Listadresses } from "./molecules/listadresses/listadresses";
 import { parseAddresses } from "./helpers/cp";
+import { ModalCp } from "./structure/modal"
+import { PopUp } from "./structure/Popup"
 
 // RETOS
 // [x] - 1. Al borrar el CP des-aparecer los resultados
@@ -22,8 +24,10 @@ function App() {
 
   return (
     <div className="App">
-      <Cp onChange={(list) => SetAllValues(list)} />
-      <Listadresses addresses={parseAddresses(Values)} />
+      {/* <ModalCp/> */}
+      <PopUp/>
+      {/* <Cp onChange={(list) => SetAllValues(list)} />
+      <Listadresses addresses={parseAddresses(Values)} onChange={value=>console.log('Hola!, esta es mi direccion',value)}/> */}
     </div>
   );
 }

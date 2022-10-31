@@ -1,0 +1,15 @@
+.modalContainer{
+    background: rgba(0, 0, 0, 0.673);
+    width:100vw;
+    height: 100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.modal{
+    background:red;
+    display:grid;
+    grid-template-columns:50vw;
+    grid-template-rows: 10vh 50vh 10vh;
+}
