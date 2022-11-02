@@ -23,9 +23,9 @@ function App() {
   const [addressSelected, setAddressSelected] = useState(undefined);
 
   return (
-    <div className="App">
-      {/* <ModalCp/> */}
-      <PopUp/>
+    <div>
+      <ModalCp/>
+      {/* <PopUp/> */}
       {/* <Cp onChange={(list) => SetAllValues(list)} />
       <Listadresses addresses={parseAddresses(Values)} onChange={value=>console.log('Hola!, esta es mi direccion',value)}/> */}
     </div>
