@@ -13,6 +13,7 @@
 
 .modal{
     background: whitesmoke;
+    text-transform: uppercase;
     display:grid;
     grid-template-columns:50vw;
     grid-template-rows: 10vh 50vh 10vh;
@@ -23,30 +24,33 @@
 
 .header{
     display: flex;
+    color: #1a1a1a;
     align-items: center;
     justify-content: space-between;
     border: 1px solid #c6c6c6;
-    border-style: none none solid none;
+    //border-style: none none solid none;
 }
 
 .body{
     display: flex;
+    color: #55595c;
     align-items: center;
     justify-content: left;
     border: 1px solid #c6c6c6;
-    border-style: none none solid none;
+    //border-style: none none solid none;
 }
 
 .footer{
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid #c6c6c6;
 }
 
 .accept{
     color: #fff;
-    text-transform: uppercase;
     font-size: 0.875rem;
+    text-transform: uppercase;
     border: none;
     padding: 12px 24px 12px 24px;
     border-radius: 0;

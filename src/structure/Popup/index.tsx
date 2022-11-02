@@ -7,10 +7,10 @@ export const PopUp = () => {
     <div className={scss.modalContainer}>
         <div className={scss.modal}>
             <div className={scss.header}>
-              <h1 className={scss.title}>Codigos Postales</h1>
+              <h2 className={scss.title}>Codigos Postales</h2>
               <button className={scss.close}>x</button>
             </div>
-            <div className={scss.body}>Datos de Codigo Postal</div>
+            <div className={scss.body}><p>Datos de Codigo Postal</p></div>
             <div className={scss.footer}>
               <button className={scss.accept}>Aceptar</button>
             </div>
