@@ -12,7 +12,6 @@ export const PopUp = () => {
             <div className={scss.body}>body</div>
             <div className={scss.footer}>
               footer
-              <button className={scss.continue}>Continuar</button>
             </div>
         </div>
             
