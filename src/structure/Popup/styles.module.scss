@@ -46,7 +46,7 @@
     display: flex;
     padding: 16px;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
     border: 1px solid #c6c6c6;
 }
 
@@ -61,9 +61,15 @@
     &:hover{
         background-color: #161616;
     }
+    &:disabled{
+        cursor: not-allowed;
+    }
 }
 
 .close{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 30px;
     border: none;
     background-color: transparent;
@@ -71,7 +77,27 @@
     padding: 5px 10px 5px 10px;
     opacity: 0.5;
     transition: opacity 0.1s ease-in 0.1s;
+    
+    svg{
+        width: 30px;
+        height: 30px;
+        pointer-events: none;
+    }
+
     &:hover{
         opacity: 0.8;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal{
+        background: whitesmoke;
+        text-transform: uppercase;
+        display:grid;
+        grid-template-columns:100vw;
+        grid-template-rows: 10vh 80vh 10vh;
+        box-shadow: 0px 0px 15px black;
+        font-family: NunitoSans;
+        border: 2px solid rgba(0, 0, 0, 0.175);
     }
 }
