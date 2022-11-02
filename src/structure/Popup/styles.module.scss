@@ -17,20 +17,24 @@
     grid-template-columns:50vw;
     grid-template-rows: 10vh 50vh 10vh;
     box-shadow: 0px 0px 15px black;
-    padding: 5px 5px 5px 5px;
     font-family: NunitoSans;
+    border: 2px solid rgba(0, 0, 0, 0.175);
 }
 
 .header{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border: 1px solid #c6c6c6;
+    border-style: none none solid none;
 }
 
 .body{
     display: flex;
     align-items: center;
     justify-content: left;
+    border: 1px solid #c6c6c6;
+    border-style: none none solid none;
 }
 
 .footer{
