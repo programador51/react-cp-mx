@@ -8,8 +8,37 @@
 }
 
 .modal{
-    background:red;
+    background: whitesmoke;
     display:grid;
     grid-template-columns:50vw;
     grid-template-rows: 10vh 50vh 10vh;
+    box-shadow: 0px 0px 15px black;
+    padding: 5px 5px 5px 5px;
+}
+
+.header{
+    display: flexbox;
+    flex-direction: row;
+
+}
+
+.title{
+    display: flex;
+    float: left;
+    margin: 0;
+
+}
+
+.close{
+    display:flex;
+    float: right;
+    font-size: 16px;
+    border: none;
+    background-color: white;
+    box-shadow: 0px 0px 2px black;
+    padding: 5px 10px 5px 10px;
+    transition: background 0.1s ease-in 0.1s;
+    &:hover{
+        background-color: red;
+    }
 }

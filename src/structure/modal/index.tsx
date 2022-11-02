@@ -28,9 +28,7 @@ const [cp,setCp] = useState("");
             props={{
                 placeholder:"Solo números, ejemplo: 64720"
             }}/>
-            <Validation/>
-            {/* {cp.length <= 4 ? <p className={scss.fracaso}>Codigo postal incompleto</p> : <p className={scss.exito}>Codigo postal correcto</p>} */}
-            
+            <Validation/>            
             </div>
             </Provider>
     )
