@@ -18,7 +18,7 @@
     align-items: flex-start;
     width:100%;
 
-    input{
+    input[type=number]{
         border-radius: 0;
         border: none;
         background-color: #f7f7f9;
@@ -31,7 +31,7 @@
          -moz-appearance: textfield;
         }
         &::-webkit-inner-spin-button, ::-webkit-outer-spin-button{
-            -webkit-appearance: none;
+            -webkit-appearance: textfield;
         }
     }
 }

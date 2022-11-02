@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "NunitoSans";
+    src: url("../../tipografias/NunitoSans-Regular.ttf") format("truetype");
+}  
 .modalContainer{
     background: rgba(0, 0, 0, 0.673);
     width:100vw;
@@ -14,31 +18,49 @@
     grid-template-rows: 10vh 50vh 10vh;
     box-shadow: 0px 0px 15px black;
     padding: 5px 5px 5px 5px;
+    font-family: NunitoSans;
 }
 
 .header{
-    display: flexbox;
-    flex-direction: row;
-
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.title{
+.body{
     display: flex;
-    float: left;
-    margin: 0;
+    align-items: center;
+    justify-content: left;
+}
 
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accept{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    border: none;
+    padding: 12px 24px 12px 24px;
+    border-radius: 0;
+    background-color: #1a1a1a;
+    &:hover{
+        background-color: #161616;
+    }
 }
 
 .close{
-    display:flex;
-    float: right;
-    font-size: 16px;
+    font-size: 30px;
     border: none;
-    background-color: white;
-    box-shadow: 0px 0px 2px black;
+    background-color: transparent;
+    color: black;
     padding: 5px 10px 5px 10px;
-    transition: background 0.1s ease-in 0.1s;
+    opacity: 0.5;
+    transition: opacity 0.1s ease-in 0.1s;
     &:hover{
-        background-color: red;
+        opacity: 0.8;
     }
 }

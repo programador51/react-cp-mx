@@ -13,25 +13,25 @@ const ModalCp = () => {
 
     const [Values, SetAllValues] = useState<CpTyping[]>([]);
     
-const [cp,setCp] = useState("");
+    const [cp,setCp] = useState("");
 
-    return (
-        <Provider value={{
-            cp
-        }}>
-        <div className={scss.container}>
-            <Cp 
-            onChange={(list,cp) =>{
-                SetAllValues(list);
-                setCp(cp)
-            }}
-            props={{
-                placeholder:"Solo números, ejemplo: 64720"
-            }}/>
-            <Validation/>            
-            </div>
-            </Provider>
-    )
+        return (
+            <Provider value={{
+                cp
+            }}>
+            <div className={scss.container}>
+                <Cp 
+                onChange={(list,cp) =>{
+                    SetAllValues(list);
+                    setCp(cp)
+                }}
+                props={{
+                    placeholder:"Solo números, ejemplo: 64720"
+                }}/>
+                <Validation/>            
+                </div>
+                </Provider>
+        )
 }
 
 export {
