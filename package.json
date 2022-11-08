@@ -1,7 +1,36 @@
 {
   "name": "react-cp-mexico",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.0-development",
+  "author": {
+    "email": "jperezo98@hotmail.com",
+    "name": "José Luis Pérez Olguín"
+  },
+  "homepage": "https://github.com/programador51/react-cp-mx",
+  "description": "Input autocompletable de código postal para México",
+  "keywords": [
+    "react",
+    "frontend",
+    "front-end",
+    "FRONT-END",
+    "reactjs",
+    "REACT",
+    "REACT.JS",
+    "facebook",
+    "mx",
+    "MEXICO",
+    "MÉXICO",
+    "mexico",
+    "méxico",
+    "formulario",
+    "form",
+    "postal code",
+    "código postal",
+    "cp",
+    "CP",
+    "Cp"
+  ],
+  "categories": [],
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -10,6 +39,7 @@
     "@types/node": "^16.11.65",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
+    "commitizen": "^4.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -23,7 +53,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "semantic-release": "semantic-release"
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +75,11 @@
     ]
   },
   "devDependencies": {
-    "@types/uuid": "^8.3.4"
+    "@types/uuid": "^8.3.4",
+    "semantic-release": "^19.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/programador51/react-cp-mx.git"
   }
 }
