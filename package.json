@@ -76,10 +76,16 @@
   },
   "devDependencies": {
     "@types/uuid": "^8.3.4",
+    "cz-conventional-changelog": "^3.3.0",
     "semantic-release": "^19.0.5"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/programador51/react-cp-mx.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
