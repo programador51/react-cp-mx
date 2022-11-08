@@ -5,6 +5,15 @@
     "email": "jperezo98@hotmail.com",
     "name": "José Luis Pérez Olguín"
   },
+  "license": "MIT",
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "files": [
+    "src"
+  ],
   "homepage": "https://github.com/programador51/react-cp-mx",
   "description": "Input autocompletable de código postal para México",
   "keywords": [
