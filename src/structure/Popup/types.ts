@@ -4,4 +4,5 @@ import { AddressI } from "../../molecules/listadresses/types";
 export interface PropsPopUp {
   addresses?: CpTyping[];
   onConfirm?: (address: AddressI) => void;
+  isQueryDone?: boolean;
 }

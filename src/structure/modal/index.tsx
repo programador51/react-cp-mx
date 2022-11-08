@@ -16,6 +16,7 @@ const ModalCp = ({
   fetchResource = null,
 }: PropsModalCp) => {
   const [Values, SetAllValues] = useState<CpTyping[]>([]);
+  const [isQueryDone, setIsQueryDone] = useState(false);
   const [showModal, setShowModal] = useState<boolean>(false);
   const [cp, setCp] = useState<string>("");
 
@@ -32,6 +33,7 @@ const ModalCp = ({
       {showModal ? (
         <PopUp
           addresses={Values}
+          isQueryDone={isQueryDone}
           onConfirm={(adress) => {
             setShowModal(false);
 
@@ -62,9 +64,10 @@ const ModalCp = ({
         <label>Codigo postal</label>
         <Cp
           fetchResource={fetchResource}
-          onChange={(list, cp) => {
+          onChange={(list, cp, loaded) => {
             SetAllValues(list);
             setCp(cp);
+            setIsQueryDone(loaded);
           }}
           props={{
             placeholder: "Solo números, ejemplo: 64720",

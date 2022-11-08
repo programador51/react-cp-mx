@@ -7,7 +7,11 @@ function Cp({
   fetchResource = null,
   props = {},
 }: PropsComponentCp): JSX.Element {
-  const { cp, handleOnChange } = useCp({ onChange, fetchResource });
+  const { cp, handleOnChange } = useCp({
+    onChange,
+    fetchResource,
+    valueParam: props?.value || "",
+  });
 
   return (
     <input

@@ -4,6 +4,7 @@ import { Listadresses } from "../../molecules/listadresses/listadresses";
 import { AddressI } from "../../molecules/listadresses/types";
 import scss from "./styles.module.scss";
 import { PropsPopUp } from "./types";
+import { SpinnerCircular } from "spinners-react";
 
 /**
  * Render a modal with the list of available addresses
@@ -11,7 +12,11 @@ import { PropsPopUp } from "./types";
  * @param props.onConfirm - It triggers when user clicks "Aceptar" or close button
  * @returns {JSX.Element}
  */
-export const PopUp = ({ addresses = [], onConfirm = () => {} }: PropsPopUp) => {
+export const PopUp = ({
+  addresses = [],
+  onConfirm = () => {},
+  isQueryDone = false,
+}: PropsPopUp) => {
   const EMPTY_ADDRESS = {
     colonia: "",
     estado: "",
@@ -25,7 +30,7 @@ export const PopUp = ({ addresses = [], onConfirm = () => {} }: PropsPopUp) => {
     <div className={scss.modalContainer}>
       <div className={scss.modal}>
         <div className={scss.header}>
-          <h2 className={scss.title}>Codigos Postales</h2>
+          <h2 className={scss.title}>Códigos Postales</h2>
           <button
             className={scss.close}
             onClick={(e) => onConfirm(EMPTY_ADDRESS)}
@@ -47,11 +52,18 @@ export const PopUp = ({ addresses = [], onConfirm = () => {} }: PropsPopUp) => {
           </button>
         </div>
         <div className={scss.body}>
-          <Listadresses
-            addresses={parseAddresses(addresses)}
-            onChange={(address) => setOptionSelected(address)}
-            // onChange={setOptionSelected}
-          />
+          {!isQueryDone ? (
+            <div className={scss.spinner}>
+              <p>Cargando</p>
+              <SpinnerCircular />
+            </div>
+          ) : (
+            <Listadresses
+              addresses={parseAddresses(addresses)}
+              onChange={(address) => setOptionSelected(address)}
+              // onChange={setOptionSelected}
+            />
+          )}
         </div>
         <div className={scss.footer}>
           <button
