@@ -1,24 +1,27 @@
 import { Cp } from "./interfaces";
 
-export async function getAdresses(cp:string):Promise<Cp[]>{
-    try {
-        const responseApi = await fetch(`${process.env.REACT_APP_url}/cp/${cp}`,{
-          headers:{
-            'X-RapidAPI-Key': '456ca3b344msh39bdc986ed3f119p185155jsne9527606eace',
-            'X-RapidAPI-Host': 'codigos-postales-mx.p.rapidapi.com'
-          },
-          method:"GET"
-        });
-        
-        const adresses = await responseApi.json();
+export async function getAdresses(cp: string): Promise<Cp[]> {
+  try {
+    const responseApi = await fetch(
+      `https://codigos-postales-mx.p.rapidapi.com/cp/${cp}`,
+      {
+        headers: {
+          "X-RapidAPI-Key":
+            "456ca3b344msh39bdc986ed3f119p185155jsne9527606eace",
+          "X-RapidAPI-Host": "codigos-postales-mx.p.rapidapi.com",
+        },
+        method: "GET",
+      }
+    );
 
-        if(responseApi.ok && responseApi.status === 200){
-            return adresses;
-        }
+    const adresses = await responseApi.json();
 
-        return []
-
-    } catch (error) {
-        return [];
+    if (responseApi.ok && responseApi.status === 200) {
+      return adresses;
     }
+
+    return [];
+  } catch (error) {
+    return [];
+  }
 }
