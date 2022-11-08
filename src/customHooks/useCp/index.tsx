@@ -2,7 +2,10 @@ import { useState, useEffect } from "react";
 import { getAdresses } from "../../helpers/apis/cp/cp";
 import { ValuesCustomHookUseCp } from "./types";
 
-function useCp({ onChange = () => {} }: ValuesCustomHookUseCp) {
+function useCp({
+  onChange = () => {},
+  fetchResource = null,
+}: ValuesCustomHookUseCp) {
   const [cp, setValue] = useState("");
 
   const handleOnChange = async (cp: string) => {
@@ -11,12 +14,15 @@ function useCp({ onChange = () => {} }: ValuesCustomHookUseCp) {
     setValue(cpValidated);
 
     if (cp.length < 5) {
-      onChange([],cpValidated);
+      onChange([], cpValidated);
       return;
     }
 
-    const listAdresses = await getAdresses(cpValidated);
-    onChange(listAdresses,cpValidated);
+    const fetchFunctionToUse =
+      fetchResource === null ? getAdresses : fetchResource;
+
+    const listAdresses = await fetchFunctionToUse(cpValidated);
+    onChange(listAdresses, cpValidated);
   };
 
   return {

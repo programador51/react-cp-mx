@@ -1,7 +1,9 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
 import { Cp } from "../../atoms/cp";
 import { Cp as CpTyping } from "../../helpers/apis/cp/interfaces";
+import { PopUp } from "../Popup";
 import scss from "./index.module.scss";
+import { onChangeModalCp, PropsModalCp } from "./types";
 import { Validation } from "./Validations";
 
 export const ContextModal = createContext({
@@ -9,10 +11,17 @@ export const ContextModal = createContext({
 });
 const { Provider } = ContextModal;
 
-const ModalCp = () => {
+const ModalCp = ({
+  onChange = () => {},
+  fetchResource = null,
+}: PropsModalCp) => {
   const [Values, SetAllValues] = useState<CpTyping[]>([]);
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const [cp, setCp] = useState<string>("");
 
-  const [cp, setCp] = useState("");
+  useEffect(() => {
+    if (cp.length === 5) setShowModal(true);
+  }, [cp]);
 
   return (
     <Provider
@@ -20,9 +29,39 @@ const ModalCp = () => {
         cp,
       }}
     >
+      {showModal ? (
+        <PopUp
+          addresses={Values}
+          onConfirm={(adress) => {
+            setShowModal(false);
+
+            // const onChangeValue:onChangeModalCp = {
+            //   colonia:adress.colonia,
+            //   estado:adress.estado,
+            //   municipio:adress.municipio,
+            //   tipoDeZona:adress.tipoDeZona,
+            //   cp
+            // }
+
+            // const onChangeValue:onChangeModalCp = {
+            //   ...adress,
+            //   cp:cp
+            // }
+
+            const onChangeValue: onChangeModalCp = {
+              ...adress,
+              cp,
+            };
+
+            onChange(onChangeValue);
+          }}
+        />
+      ) : null}
+
       <div className={scss.container}>
         <label>Codigo postal</label>
         <Cp
+          fetchResource={fetchResource}
           onChange={(list, cp) => {
             SetAllValues(list);
             setCp(cp);
@@ -32,7 +71,6 @@ const ModalCp = () => {
           }}
         />
         <Validation />
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit dolores delectus rerum et tempora nobis nulla optio, impedit recusandae temporibus a voluptates obcaecati enim placeat eos natus, debitis incidunt. Distinctio voluptatum nobis nulla vitae. Corrupti, aut voluptatum? Porro odio sit eaque, quam corporis neque exercitationem rerum soluta harum qui voluptatem, rem, placeat perspiciatis dolorum veniam explicabo vero fugiat quasi totam aperiam! Non, mollitia. Pariatur, ullam quae maiores rem, itaque laborum quo minima error aut atque laboriosam in iure minus corporis consectetur adipisci assumenda beatae officia qui esse sunt hic temporibus at nostrum? Mollitia, obcaecati maxime illo ducimus dignissimos quod fuga.</p>
       </div>
     </Provider>
   );

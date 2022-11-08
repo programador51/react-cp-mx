@@ -2,8 +2,12 @@ import React from "react";
 import useCp from "../../customHooks/useCp";
 import { PropsComponentCp } from "./types";
 
-function Cp({ onChange, props = {} }: PropsComponentCp): JSX.Element {
-  const { cp, handleOnChange } = useCp({ onChange });
+function Cp({
+  onChange,
+  fetchResource = null,
+  props = {},
+}: PropsComponentCp): JSX.Element {
+  const { cp, handleOnChange } = useCp({ onChange, fetchResource });
 
   return (
     <input

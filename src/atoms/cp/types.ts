@@ -4,7 +4,15 @@ export interface PropsComponentCp {
   /**
    * Funcion que devuelve algo...
    */
-  onChange?: (listOfAddresses: Cp[],cp:string) => void;
+  onChange?: (listOfAddresses: Cp[], cp: string) => void;
 
-  props?:React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
+  props?: React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  >;
+
+  /**
+   * A callback that executes and returns the information needed to display the list of addresses
+   */
+  fetchResource?: ((cp: string) => Promise<Cp[]>) | null;
 }
