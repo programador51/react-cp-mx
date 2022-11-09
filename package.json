@@ -14,9 +14,9 @@
   "files": [
     "dist"
   ],
+  "homepage": "https://endearing-starlight-bdcb69.netlify.app/?path=/story/cp-fetch--page",
   "typings": "dist/index.d.ts",
   "main": "dist/index.js",
-  "homepage": "https://github.com/programador51/react-cp-mx",
   "description": "Input autocompletable de código postal para México",
   "keywords": [
     "react",
@@ -63,13 +63,14 @@
   "scripts": {
     "clean": "rimraf dist/",
     "copy-files": "copyfiles -u 1 src/**/*.scss dist/",
+    "copyttf": "copyfiles -u 1 src/**/*.ttf dist/",
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "semantic-release": "semantic-release",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "build": "npm run clean && tsc && npm run copy-files"
+    "build": "npm run clean && tsc && npm run copy-files && npm run copyttf"
   },
   "eslintConfig": {
     "extends": [
@@ -100,6 +101,7 @@
     ]
   },
   "devDependencies": {
+    "@mdx-js/react": "^1.6.22",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-interactions": "^6.5.13",
