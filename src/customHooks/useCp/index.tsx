@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { getAdresses } from "../../helpers/apis/cp/cp";
 import { ValuesCustomHookUseCp } from "./types";
 

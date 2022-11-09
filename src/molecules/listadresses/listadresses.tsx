@@ -12,7 +12,7 @@ function Listadresses({
   const keyValue = useRef(uuidv4());
 
   useEffect(() => {
-    if (addresses.length == 0) setdataselect(null);
+    if (addresses.length === 0) setdataselect(null);
   }, [addresses]);
 
   useEffect(() => {
@@ -41,12 +41,8 @@ function Listadresses({
           index={index}
           key={`${keyValue.current}-${index}`}
           onChange={(cityselected) => setdataselect(cityselected)}
-          // onClick={() => dataselect()}
         />
       ))}
-      {/*addresses.map((item) => (
-        <Address key=? item={item} />
-      ))*/}
     </div>
   );
 }
