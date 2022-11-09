@@ -1,9 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import css from "./index.module.scss";
 import { PropsAdressListItem } from "./types";
 import { v4 as uuidv4 } from "uuid";
 
-function Address({ item, index, onChange }: PropsAdressListItem): JSX.Element {
+function Address({ item, onChange }: PropsAdressListItem): JSX.Element {
   const htmlDom = useRef(uuidv4());
 
   return (

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useRef } from "react";
 import { AddressI, PropsListadresses } from "./types";
 import { Address } from "../../atoms/address/address";
