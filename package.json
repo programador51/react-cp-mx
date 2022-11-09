@@ -62,7 +62,7 @@
   },
   "scripts": {
     "clean": "rimraf dist/",
-    "copy-files": "copyfiles -u 1 src/**/*.css dist/",
+    "copy-files": "copyfiles -u 1 src/**/*.scss dist/",
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
