@@ -8,7 +8,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "16"
-      - run: npm ci
+
+      - name: 1. Install dependencies
+      - run: npm i
 
       - name: 2. Create build
         run: npm run build
