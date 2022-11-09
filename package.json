@@ -51,11 +51,9 @@
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "commitizen": "^4.2.5",
-    "copy-files": "^0.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "rimraf": "^3.0.2",
     "sass": "^1.55.0",
     "spinners-react": "^1.0.7",
     "typescript": "^4.8.4",
@@ -63,14 +61,14 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "clean": "rimraf dist/",
+    "copy-files": "copyfiles -u 1 src/**/*.css dist/",
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "semantic-release": "semantic-release",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "clean": "rimraf dist/",
-    "copy-files": "copyfiles -u 1 src/**/*.css dist/",
     "build": "npm run clean && tsc && npm run copy-files"
   },
   "eslintConfig": {
@@ -114,8 +112,10 @@
     "@storybook/testing-library": "^0.0.13",
     "@types/uuid": "^8.3.4",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "copy-files": "^0.1.0",
     "cz-conventional-changelog": "^3.3.0",
     "prop-types": "^15.8.1",
+    "rimraf": "^3.0.2",
     "semantic-release": "^19.0.5",
     "webpack": "^5.74.0"
   },
