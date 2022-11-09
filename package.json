@@ -62,15 +62,15 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts start",   
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "semantic-release": "semantic-release",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "clean": "rimraf dist/",
-    "copy-files": "copyfiles -u 1 src/**/*.css dist/"
+    "copy-files": "copyfiles -u 1 src/**/*.css dist/",
+    "build": "npm run clean && tsc && npm run copy-files"
   },
   "eslintConfig": {
     "extends": [
