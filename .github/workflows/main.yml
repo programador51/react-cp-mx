@@ -9,7 +9,11 @@ jobs:
         with:
           node-version: "16"
       - run: npm ci
-      - name: Release
+
+      - name: 2. Create build
+        run: npm run build
+
+      - name: 3. Release
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

@@ -1,0 +1,63 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import { CpDemo } from "../CpDemo.tsx";
+
+<Meta title="CP/Input" />
+
+# Input
+
+No tiene ningun estilo, pero es completamente customizable. Este componente puede recibir todas las propiedades de un elemento `input`
+
+<CpDemo />
+
+---
+
+### Código
+
+```tsx
+import { Cp } from "react-cp-mexico";
+
+export const MyApp = () => {
+  const [address, setAddress] = useState({
+    cp: "",
+    addresses: [],
+  });
+
+  return (
+    <Cp
+      onChange={(list, cp, a) =>
+        setAdress((state) => ({
+          ...state,
+          cp,
+          addresses: list,
+        }))
+      }
+      props={{
+        placeholder: "Escribe aquí!",
+        id: "SoySoloUnId",
+        name: "TambienTengoUnName",
+        value: 64720,
+      }}
+    />
+  );
+};
+```
+
+---
+
+```ts
+export interface PropsComponentCp {
+  onChange?: (listOfAddresses: Cp[], cp: string, isQueryDone: boolean) => void;
+
+  props?: React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  >;
+
+  /**
+   * A callback that executes and returns the information needed to display the list of addresses
+   */
+  fetchResource?: ((cp: string) => Promise<Cp[]>) | null;
+}
+```
+
+---

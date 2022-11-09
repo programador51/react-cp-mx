@@ -1,0 +1,74 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import { FetchDemo } from "../FetchDemo.tsx";
+
+<Meta title="CP/Fetch" />
+
+# Fetch
+
+Por defecto, la librería hace uso del API de Amplus. Pero, se puede hacer inyecion de la informacion siempre y cuando
+se respete el tipado que requiere la propiedad `fetchResource`. Asi se puede leer desde un excel, json, api, etc.
+
+<FetchDemo />
+
+---
+
+### Código
+
+El ejemplo siguiente retorna una lista en crudo, pero esta funcion puede leer un excel, llamar un api diferente, etc.
+
+```tsx
+import React, { useState } from "react";
+import { Cp } from "./atoms/cp";
+
+export const FetchDemo = () => {
+  const [data, setData] = useState([]);
+
+  return (
+    <Cp
+      onChange={(list, cp, a) => setData(list)}
+      fetchResource={async (cp) => {
+        return [
+          {
+            codigoPostal: "64720",
+            municipio: {
+              nombre: "Monterrey",
+              codigo: "039",
+              clave: "07",
+            },
+            colonia: "Unión Miguel Barrera",
+            codigoOficina: "64821",
+            estado: {
+              nombre: "Nuevo León",
+              codigo: "19",
+            },
+            asenta: {
+              nombre: "Colonia",
+              tipo: "09",
+            },
+            tipoDeZona: "Urbano",
+          },
+          {
+            codigoPostal: "64720",
+            municipio: {
+              nombre: "Monterrey",
+              codigo: "039",
+              clave: "07",
+            },
+            colonia: "Benito Juárez (F-96)",
+            codigoOficina: "64821",
+            estado: {
+              nombre: "Nuevo León",
+              codigo: "19",
+            },
+            asenta: {
+              nombre: "Colonia",
+              tipo: "09",
+            },
+            tipoDeZona: "Urbano",
+          },
+        ];
+      }}
+    />
+  );
+};
+```

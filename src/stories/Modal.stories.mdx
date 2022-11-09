@@ -1,0 +1,43 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import { ModalCp } from "../index.tsx";
+import { ModalDemo } from "../ModalDemo.tsx";
+
+<Meta title="CP/Modal" />
+
+# Modal
+
+Con este componente se renderiza un input `numerico` que muestra una pantalla modal al terminar de escribir los 5 dígitos.
+
+<ModalDemo />
+
+### Código
+
+```tsx
+import { ModalCp } from "react-cp-mexico";
+import React, { useState } from "react";
+
+export const MyApp = () => {
+  const [address, setAddress] = useState<onChangeModalCp>({
+    colonia: "",
+    estado: "",
+    municipio: "",
+    tipoDeZona: "",
+    cp: "",
+  });
+
+  return <ModalCp onChange={setAddress} />;
+};
+```
+
+```ts
+export interface AddressI {
+  estado: string;
+  municipio: string;
+  colonia: string;
+  tipoDeZona: string;
+}
+
+export interface onChangeModalCp extends AddressI {
+  cp: string;
+}
+```
