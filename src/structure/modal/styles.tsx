@@ -1,21 +1,10 @@
-@font-face {
-  font-family: "NunitoSans";
-  src: url("../../tipografias/NunitoSans-Regular.ttf") format("truetype");
-}
+import styled from "styled-components";
 
-.container,
-.exito,
-.fracaso {
+import NunitoSans from "../../tipografias/NunitoSans-Regular.ttf";
+
+const ContainerPostalCode = styled.div`
   font-family: NunitoSans;
   font-size: 16px;
-}
-
-.exito,
-.fracaso {
-  margin: 5px 0;
-}
-
-.container {
   label {
     margin: 0 0 5px 0;
   }
@@ -42,12 +31,27 @@
       -webkit-appearance: textfield;
     }
   }
-}
+`;
 
-.exito {
+const Success = styled.p`
+  font-family: NunitoSans;
+  font-size: 16px;
+  margin: 5px 0;
   color: #4bbf73;
-}
+`;
 
-.fracaso {
+const Invalid = styled.p`
+  font-family: NunitoSans;
+  font-size: 16px;
+  margin: 5px 0;
   color: #d9534f;
-}
+`;
+
+const ContainerModalCp = styled.div`
+  @font-face {
+    font-family: "NunitoSans";
+    src: url(${NunitoSans}) format("truetype");
+  }
+`;
+
+export { ContainerPostalCode, Success, Invalid, ContainerModalCp };

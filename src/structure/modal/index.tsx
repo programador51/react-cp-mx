@@ -2,7 +2,8 @@ import React, { useState, createContext, useEffect } from "react";
 import { Cp } from "../../atoms/cp";
 import { Cp as CpTyping } from "../../helpers/apis/cp/interfaces";
 import { PopUp } from "../Popup";
-import scss from "./index.module.scss";
+
+import { ContainerModalCp, ContainerPostalCode } from "./styles";
 import { onChangeModalCp, PropsModalCp } from "./types";
 import { Validation } from "./Validations";
 
@@ -30,51 +31,39 @@ const ModalCp = ({
         cp,
       }}
     >
-      {showModal ? (
-        <PopUp
-          addresses={Values}
-          isQueryDone={isQueryDone}
-          onConfirm={(adress) => {
-            setShowModal(false);
+      <ContainerModalCp>
+        {showModal ? (
+          <PopUp
+            addresses={Values}
+            isQueryDone={isQueryDone}
+            onConfirm={(adress) => {
+              setShowModal(false);
+              const onChangeValue: onChangeModalCp = {
+                ...adress,
+                cp,
+              };
 
-            // const onChangeValue:onChangeModalCp = {
-            //   colonia:adress.colonia,
-            //   estado:adress.estado,
-            //   municipio:adress.municipio,
-            //   tipoDeZona:adress.tipoDeZona,
-            //   cp
-            // }
+              onChange(onChangeValue);
+            }}
+          />
+        ) : null}
 
-            // const onChangeValue:onChangeModalCp = {
-            //   ...adress,
-            //   cp:cp
-            // }
-
-            const onChangeValue: onChangeModalCp = {
-              ...adress,
-              cp,
-            };
-
-            onChange(onChangeValue);
-          }}
-        />
-      ) : null}
-
-      <div className={scss.container}>
-        <label>Codigo postal</label>
-        <Cp
-          fetchResource={fetchResource}
-          onChange={(list, cp, loaded) => {
-            SetAllValues(list);
-            setCp(cp);
-            setIsQueryDone(loaded);
-          }}
-          props={{
-            placeholder: "Solo números, ejemplo: 64720",
-          }}
-        />
-        <Validation />
-      </div>
+        <ContainerPostalCode>
+          <label>Código postal</label>
+          <Cp
+            fetchResource={fetchResource}
+            onChange={(list, cp, loaded) => {
+              SetAllValues(list);
+              setCp(cp);
+              setIsQueryDone(loaded);
+            }}
+            props={{
+              placeholder: "Solo números, ejemplo: 64720",
+            }}
+          />
+          <Validation />
+        </ContainerPostalCode>
+      </ContainerModalCp>
     </Provider>
   );
 };

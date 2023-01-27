@@ -2,9 +2,19 @@ import React, { useState } from "react";
 import { parseAddresses } from "../../helpers/cp";
 import { Listadresses } from "../../molecules/listadresses/listadresses";
 import { AddressI } from "../../molecules/listadresses/types";
-import scss from "./styles.module.scss";
+
 import { PropsPopUp } from "./types";
 import { SpinnerCircular } from "spinners-react";
+import {
+  Accept,
+  Body,
+  Close,
+  Footer,
+  Header,
+  Modal,
+  ModalContainer,
+  Spinner,
+} from "./styles";
 
 /**
  * Render a modal with the list of available addresses
@@ -27,14 +37,11 @@ export const PopUp = ({
   const [optionSelected, setOptionSelected] = useState<AddressI>(EMPTY_ADDRESS);
 
   return (
-    <div className={scss.modalContainer}>
-      <div className={scss.modal}>
-        <div className={scss.header}>
-          <h2 className={scss.title}>Códigos Postales</h2>
-          <button
-            className={scss.close}
-            onClick={(e) => onConfirm(EMPTY_ADDRESS)}
-          >
+    <ModalContainer>
+      <Modal>
+        <Header>
+          <h2>Códigos Postales</h2>
+          <Close onClick={(e) => onConfirm(EMPTY_ADDRESS)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -49,32 +56,30 @@ export const PopUp = ({
                 d="M6 18L18 6M6 6l12 12"
               />
             </svg>
-          </button>
-        </div>
-        <div className={scss.body}>
+          </Close>
+        </Header>
+        <Body>
           {!isQueryDone ? (
-            <div className={scss.spinner}>
+            <Spinner>
               <p>Cargando</p>
               <SpinnerCircular />
-            </div>
+            </Spinner>
           ) : (
             <Listadresses
               addresses={parseAddresses(addresses)}
               onChange={(address) => setOptionSelected(address)}
-              // onChange={setOptionSelected}
             />
           )}
-        </div>
-        <div className={scss.footer}>
-          <button
+        </Body>
+        <Footer>
+          <Accept
             onClick={(e) => onConfirm(optionSelected)}
-            className={scss.accept}
             disabled={optionSelected.colonia === ""}
           >
             Aceptar
-          </button>
-        </div>
-      </div>
-    </div>
+          </Accept>
+        </Footer>
+      </Modal>
+    </ModalContainer>
   );
 };
