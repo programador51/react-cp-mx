@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const ContainerAdress = styled.div`
+  font-family: var(--NunitoSans);
   input {
     display: none;
   }
@@ -11,7 +12,7 @@ const ContainerAdress = styled.div`
 
 const AdressStyle = styled.label`
   display: block;
-  font-family: NunitoSans;
+  font-family: var(--NunitoSans);
   background-color: #d1d1d1;
   padding: 24px;
   transition: background 0.15s ease-in 0.15s;
