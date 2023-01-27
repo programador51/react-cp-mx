@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
-import NunitoSans from "../../tipografias/NunitoSans-Regular.ttf";
-
 const ContainerPostalCode = styled.div`
-  font-family: NunitoSans;
+  font-family: var(--NunitoSans);
   font-size: 16px;
   label {
     margin: 0 0 5px 0;
@@ -34,24 +32,19 @@ const ContainerPostalCode = styled.div`
 `;
 
 const Success = styled.p`
-  font-family: NunitoSans;
+  font-family: var(--NunitoSans);
   font-size: 16px;
   margin: 5px 0;
   color: #4bbf73;
 `;
 
 const Invalid = styled.p`
-  font-family: NunitoSans;
+  font-family: var(--NunitoSans);
   font-size: 16px;
   margin: 5px 0;
   color: #d9534f;
 `;
 
-const ContainerModalCp = styled.div`
-  @font-face {
-    font-family: "NunitoSans";
-    src: url(${NunitoSans}) format("truetype");
-  }
-`;
+const ContainerModalCp = styled.div``;
 
 export { ContainerPostalCode, Success, Invalid, ContainerModalCp };
