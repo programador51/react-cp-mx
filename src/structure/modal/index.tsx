@@ -22,7 +22,7 @@ const ModalCp = ({
   const [cp, setCp] = useState<string>("");
 
   useEffect(() => {
-    if (cp.length === 5) setShowModal(true);
+    if (cp.length === 5 && Values.length > 0) setShowModal(true);
   }, [cp]);
 
   return (
